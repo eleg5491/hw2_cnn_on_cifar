@@ -12,3 +12,10 @@ Maximum reimbursement of 20 USD per person at the end of the course.
 **Remember** to close the instance every time you log off. A tutorial on Mar 10 will have some cover to using AWS.
 
 Submit your notebook file to the elearning-system before A2 deadline. **NOTE** that the derivation of theory part in Problem 5 has to be written alongside with other problems; no need to write it again in the notebook. 
+
+[UPDATE]
+The demo code has some confusion part:
+
+- In python notebook, you can not parse arguments via `argparse`. Just use fixed (and well tuned) parameters in your submission, removing the `parser` part in the demo.
+
+- The [loss](http://pytorch.org/docs/nn.html#torch.nn.CrossEntropyLoss) in the demo may be misleading from the cross entropy loss. Think about this and decide which one is the correct version.

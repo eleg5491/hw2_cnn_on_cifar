@@ -8,6 +8,7 @@ from torchvision import datasets, transforms
 from torch.autograd import Variable
 
 # Training settings
+# for terminal use. In notebook, you can't parse arguments
 parser = argparse.ArgumentParser(description='ELEG5491 A2 Image Classification on CIFAR-10')
 parser.add_argument('--batch-size', type=int, default=64, metavar='N',
                     help='input batch size for training (default: 64)')
@@ -74,7 +75,7 @@ def train(epoch):
         data, target = Variable(data), Variable(target)
         optimizer.zero_grad()
         output = model(data)
-        loss = F.nll_loss(output, target)
+        loss = F.nll_loss(output, target)   # is it true to use such a loss over cross-entropy loss? 
         loss.backward()
         optimizer.step()
         if batch_idx % args.log_interval == 0:
